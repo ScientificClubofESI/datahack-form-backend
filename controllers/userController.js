@@ -6,37 +6,47 @@ const { v4: uuidv4 } = require('uuid');
 // Create a new user
 const createUser = async (req, res) => {
     try {
-        const { hasTeam, teamName, email, firstName, lastName } = req.body
+        const { hasTeam ,createTeam, teamCode, teamName, email, firstName, lastName } = req.body;
 
         const user = new User(req.body);
         await user.save();
-        if (hasTeam) {
-            // User has a team, so add them to the existing one
-            let team = await Team.findOne({ name: teamName });
+       if(hasTeam){
+        if (!createTeam) {
+            let team = await Team.findOne({ code: teamCode });
 
             if (!team) {
-                return res.status(400).json({ message: "Team does not exist. Please check the team name." });
+                return res.status(400).json({ message: "Team not found. Please check the team code." });
             }
 
             // Check if the user is already in the team
             if (!team.users.includes(email)) {
                 team.users.push(email);
                 await team.save();
+                res.status(201).json({ message: "User added to the team successfully!", user });
+            } else {
+                res.status(400).json({ message: "User is already in this team." });
             }
         } else {
-            // User does NOT have a team, so create a new one
-            const teamCode = uuidv4().substring(0, 6); // Generate a unique 6-character team code
+            const generatedTeamCode = uuidv4().substring(0, 6);  // Unique team code
 
             const newTeam = new Team({
-                name: `${teamName}`, // Custom team name
-                code: teamCode,
-                users: [email]
+                name: teamName,  // Team name provided by the user
+                code: generatedTeamCode,  // New team code
+                users: [email],  // Add user to the team
             });
 
             await newTeam.save();
-        }
 
+            res.status(201).json({ 
+                message: "User created successfully, and a new team has been created!",
+                user,
+                team: newTeam
+            });
+        }
+       }
+       else{
         res.status(201).json({ message: "User created successfully!", user });
+       }
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
