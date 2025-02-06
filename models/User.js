@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     degree: { type: String, required: true },
     graduationYear: { type: Number, required: true },
 
-    cv: { type: String },
+    cv: {type: String},
     github: { type: String },
     kaggle: { type: String },
     linkedin: { type: String },

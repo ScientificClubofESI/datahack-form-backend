@@ -60,6 +60,7 @@ const createUser = async (req, res) => {
               
             } 
         } 
+        
         const emailSubject = "[DATAHACK] Registration Successful!";
         const emailBody =  `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -148,7 +149,6 @@ const createUser = async (req, res) => {
                 </body>
             </html>` 
 
-          
 
     // Send the email and wait for completion
         await transporter.sendMail(
@@ -159,11 +159,11 @@ const createUser = async (req, res) => {
         }).catch(error=>{
             console.log(error)
         })
-
+          
         return res.status(201).json({
             message: `User created successfully, and a ${createTeam ? 'new team has been created!' : 'user has been added to the team!'}`,
             user,
-        });
+    });
      
     } catch (error) {
         console.error(error);
