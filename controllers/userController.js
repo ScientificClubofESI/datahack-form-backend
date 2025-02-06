@@ -24,7 +24,8 @@ const transporter = nodemailer.createTransport({
 const createUser = async (req, res) => {
     try {
         const { hasTeam, createTeam, teamCode, teamName, email, firstName, lastName } = req.body;
-      
+        console.log(req.body.teamName)
+        
         // Create the user first
         const user = new User(req.body);
         await user.save();
@@ -60,6 +61,11 @@ const createUser = async (req, res) => {
               
             } 
         } 
+
+        res.status(201).json({
+            message: `User created successfully, and a ${createTeam ? 'new team has been created!' : 'user has been added to the team!'}`,
+            user,
+        });
         
         const emailSubject = "[DATAHACK] Registration Successful!";
         const emailBody =  `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -86,10 +92,10 @@ const createUser = async (req, res) => {
                                         <td align="center" style="padding: 0;">
                                             <table style="width: 100%; max-width: 600px; margin: 0 auto;">
                                                 <tr>
-                                                    <td style="width: 40%; text-align: center;">
+                                                    <td style="width: 35%; text-align: center;">
                                                         <img src="https://drive.google.com/uc?id=10JhaA9QGEugW-nVNQbFNwhbx7zWvIEy9" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
                                                     </td>
-                                                    <td style="width: 40%; text-align: center;">
+                                                    <td style="width: 35%; text-align: center;">
                                                         <img src="https://drive.google.com/uc?id=1NO4sLSYhhFj1T4Fs2IhWjscsr62Vkz8a" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
                                                     </td>
                                                 </tr>
@@ -154,16 +160,13 @@ const createUser = async (req, res) => {
         await transporter.sendMail(
         { to: email,
         subject: emailSubject,
-        html:`<strong>Hello,</strong> ${emailBody}`,}).then(()=> {
+        html:`${emailBody}`,}).then(()=> {
             console.log("tout va bien")
         }).catch(error=>{
             console.log(error)
         })
           
-        return res.status(201).json({
-            message: `User created successfully, and a ${createTeam ? 'new team has been created!' : 'user has been added to the team!'}`,
-            user,
-    });
+
      
     } catch (error) {
         console.error(error);
