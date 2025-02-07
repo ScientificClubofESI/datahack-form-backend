@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     hearAboutUs: { type: String, required: true },
     motivation: { type: String, required: true },
 
-    withTeam: { type: String, required: true, default: false },
+    hasTeam: { type: String, required: true, default: false },
     teamName: { type: String },
     comment: { type: String }
 });

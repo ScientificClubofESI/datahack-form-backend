@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: datahack-form-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
