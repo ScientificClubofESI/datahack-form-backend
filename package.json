@@ -149,9 +149,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
+  
   "overrides": {
-    "fsevents": "^2.3.3"
+      "fsevents": "^2.3.3"
   },
+  "optionalDependencies": {
+      "fsevents": "^2.3.3"
+  },
+  
   "keywords": [],
   "author": "",
   "license": "ISC"
