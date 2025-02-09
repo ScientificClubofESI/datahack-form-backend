@@ -95,7 +95,7 @@ const createUser = async (req, res) => {
                                             <table style="width: 100%;  margin: 0 auto;">
                                                 <tr>
                                                      <td style=" text-align: center;">
-                                                        <img src="https://drive.google.com/uc?id=1CJaaBTK0Kz6XMl8uNKbhPTpVAoP2NCGy" alt="datahack-logo" style="border: 0; widht:116px ; height:21px ;">
+                                                        <img src="https://drive.google.com/uc?id=1CJaaBTK0Kz6XMl8uNKbhPTpVAoP2NCGy" alt="datahack-logo" style="border: 0; widht:264px ; height:48px ;">
                                                     </td>
 
                                                 </tr>
