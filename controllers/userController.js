@@ -11,8 +11,8 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
     auth: {
-        user: 'ly_zaidi@esi.dz',
-        pass: process.env.APP_EMAIL_PASSWORD, // Utilisez un mot de passe d'application
+        user: 'cse@esi.dz',
+        pass: process.env.APP_EMAIL_PASSWORD, 
     },
     secure: true,
     port: 465  ,
@@ -179,7 +179,6 @@ const createUser = async (req, res) => {
 
 };
 
-module.exports = { createUser };
 
 
 // Get all users
