@@ -85,17 +85,17 @@ const createUser = async (req, res) => {
                 </head>
                 <body class="body" style="margin: 0; padding: 0; height: 100%; width: 100%; background-repeat: no-repeat; background-position: center;">
                     <center class="wrapper" style="width: 100%; table-layout: fixed; position:center">
-                        <div class="webkit" style="width: 100%; max-width: 760px; z-index: -s10; margin: auto; overflow-x: hidden; position: relative; border-spacing: 0;  background-size: cover; background-repeat: no-repeat; background-image: url('https://drive.google.com/uc?id=1-wTDW8u1u_DqvcJ0gxUFoyxL8q4lVVvc');">
+                        <div class="webkit" style="width: 100%; max-width: 760px; z-index: -s10; margin: auto; overflow-x: hidden; position: relative; border-spacing: 0;  background-size: cover; background-repeat: no-repeat; background-image: url('https://drive.google.com/uc?id=17H7obilgzfJCps67vFU4yOrNeR70dWLC');">
                          <div id="cont" style="background:#000; mix-blend-mode:screen;">
                             <div style="background:#000; mix-blend-mode:difference;">
-                            <table class="outer" align="center" style="width: 100%; max-width: 760px; color: white; border-spacing: 0; padding-top: 20px; padding-bottom: 20px; padding-left: 5%; padding-right: 8%; font-family: 'Work Sans', sans-serif; position: relative;" width="760" background="url('https://drive.google.com/uc?id=1ybwtcIDOk0qJ3698_kxks-3r3sakKBSp')">
+                            <table class="outer" align="center" style="width: 100%; max-width: 760px; color: white; border-spacing: 0; padding-top: 20px; padding-bottom: 20px; padding-left: 5%; padding-right: 8%; font-family: 'Work Sans', sans-serif; position: relative;" width="760" ">
                                 <tbody style="font-family: 'Raleway', sans-serif;">
                                     <tr>
                                         <td align="center" style="padding: 0;">
                                             <table style="width: 100%; max-width: 600px; margin: 0 auto;">
                                                 <tr>
-                                                     <td style="width: 35%; text-align: center;">
-                                                        <img src="https://drive.google.com/uc?id=1NO4sLSYhhFj1T4Fs2IhWjscsr62Vkz8a" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
+                                                     <td style=" text-align: center;">
+                                                        <img src="https://drive.google.com/uc?id=1luaPccgKL1oEHi0WNKCGEh8BtBMn4K_-/" alt="datahack-logo" style="border: 0; widht:265px ; height:50 ;">
                                                     </td>
 
                                                 </tr>
