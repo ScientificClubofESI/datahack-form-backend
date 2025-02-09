@@ -94,10 +94,10 @@ const createUser = async (req, res) => {
                                         <td align="center" style="padding: 0;">
                                             <table style="width: 100%; max-width: 600px; margin: 0 auto;">
                                                 <tr>
-                                                    <td style="width: 35%; text-align: center;">
-                                                        <img src="https://drive.google.com/uc?id=10JhaA9QGEugW-nVNQbFNwhbx7zWvIEy9" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
+                                                     <td style="width: 35%; text-align: center;">
+                                                        <img src="https://drive.google.com/uc?id=1NO4sLSYhhFj1T4Fs2IhWjscsr62Vkz8a" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
                                                     </td>
-                                                
+
                                                 </tr>
                                             </table>
                                         </td>
@@ -147,7 +147,7 @@ const createUser = async (req, res) => {
                             </table>
                             </div>
                             </div>
-                            <table>
+                            <table style="color:white">
                                   <tr>
                                         <td align="center" style="padding: 0; padding-top: 40px;">
                                             <img src="https://drive.google.com/uc?id=1o_Z33b9q-VXJ2FrocC0oE4D0Qb1YWL0a" alt="CSE log" style="border: 0; display: block;">
