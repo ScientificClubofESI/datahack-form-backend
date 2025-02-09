@@ -86,6 +86,8 @@ const createUser = async (req, res) => {
                 <body class="body" style="margin: 0; padding: 0; height: 100%; width: 100%; background-repeat: no-repeat; background-position: center;">
                     <center class="wrapper" style="width: 100%; table-layout: fixed; position:center">
                         <div class="webkit" style="width: 100%; max-width: 760px; z-index: -s10; margin: auto; overflow-x: hidden; position: relative; border-spacing: 0;  background-size: cover; background-repeat: no-repeat; background-image: url('https://drive.google.com/uc?id=1-wTDW8u1u_DqvcJ0gxUFoyxL8q4lVVvc');">
+                         <div id="cont" style="background:#000; mix-blend-mode:screen;">
+                            <div style="background:#000; mix-blend-mode:difference;">
                             <table class="outer" align="center" style="width: 100%; max-width: 760px; color: white; border-spacing: 0; padding-top: 20px; padding-bottom: 20px; padding-left: 5%; padding-right: 8%; font-family: 'Work Sans', sans-serif; position: relative;" width="760" background="url('https://drive.google.com/uc?id=1ybwtcIDOk0qJ3698_kxks-3r3sakKBSp')">
                                 <tbody style="font-family: 'Raleway', sans-serif;">
                                     <tr>
@@ -150,6 +152,8 @@ const createUser = async (req, res) => {
                                     </tr>
                                 </tbody>
                             </table>
+                            </div>
+                            </div>
                         </div>
                     </center>    
                 </body>
