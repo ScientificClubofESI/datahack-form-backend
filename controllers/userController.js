@@ -97,9 +97,7 @@ const createUser = async (req, res) => {
                                                     <td style="width: 35%; text-align: center;">
                                                         <img src="https://drive.google.com/uc?id=10JhaA9QGEugW-nVNQbFNwhbx7zWvIEy9" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
                                                     </td>
-                                                    <td style="width: 35%; text-align: center;">
-                                                        <img src="https://drive.google.com/uc?id=1NO4sLSYhhFj1T4Fs2IhWjscsr62Vkz8a" alt="cse-logo" style="border: 0; max-width: 200px; width: 100%;">
-                                                    </td>
+                                                
                                                 </tr>
                                             </table>
                                         </td>
@@ -143,18 +141,23 @@ const createUser = async (req, res) => {
                                         </td>
                                     </tr>
                                     `}
-                                    <tr>
+                                    
+                              
+                                </tbody>
+                            </table>
+                            </div>
+                            </div>
+                            <table>
+                                  <tr>
                                         <td align="center" style="padding: 0; padding-top: 40px;">
                                             <img src="https://drive.google.com/uc?id=1o_Z33b9q-VXJ2FrocC0oE4D0Qb1YWL0a" alt="CSE log" style="border: 0; display: block;">
                                             <p style="font-weight: 600; font-family: 'Work Sans', sans-serif; font-size: 14px;">CSE Club scientifique de l&apos;ESI </p>
                                             <p style="font-weight: 400; font-size: 10px; font-family: 'Work Sans', sans-serif;">Ecole Nationale Supérieure d&apos;Informatique. -ex INI.</p>
                                         </td>
                                     </tr>
-                                </tbody>
                             </table>
                             </div>
-                            </div>
-                        </div>
+                         
                     </center>    
                 </body>
             </html>` 
