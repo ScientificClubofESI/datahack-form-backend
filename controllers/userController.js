@@ -28,7 +28,7 @@ const createUser = async (req, res) => {
         
         // Create the user first
         const user = new User(req.body);
-        await user.save();
+       
 
         let team = null;
         let generatedTeamCode = null;
@@ -65,7 +65,7 @@ const createUser = async (req, res) => {
               
             } 
         } 
-
+        await user.save();
         res.status(201).json({
             message: `User created successfully, and a ${createTeam ? 'new team has been created!' : 'user has been added to the team!'}`,
             user,
