@@ -31,6 +31,8 @@ const createUser = async (req, res) => {
         await user.save();
 
         let team = null;
+        let generatedTeamCode = null;
+        let finalTeamName = null;
 
         if (hasTeam) {
             if (!createTeam) {
@@ -46,10 +48,12 @@ const createUser = async (req, res) => {
                     team.users.push(email);
                     await team.save();
                 }
-               
+                generatedTeamCode = team.code;
+                finalTeamName = team.name;
             } else {
                 // User is creating a new team
-                const generatedTeamCode = uuidv4().substring(0, 6); // Unique team code
+                generatedTeamCode = uuidv4().substring(0, 6); // Unique team code
+                finalTeamName = teamName;
 
                 team = new Team({
                     name: teamName,
@@ -65,8 +69,11 @@ const createUser = async (req, res) => {
         res.status(201).json({
             message: `User created successfully, and a ${createTeam ? 'new team has been created!' : 'user has been added to the team!'}`,
             user,
+            teamCode: generatedTeamCode,
+            teamName: finalTeamName
         });
-        
+        try {
+
         const emailSubject = "[DATAHACK] Registration Successful!";
         const emailBody =  `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -169,16 +176,16 @@ const createUser = async (req, res) => {
         subject: emailSubject,
         html:`${emailBody}`,}).then(()=> {
             console.log("tout va bien")
-        }).catch(error=>{
-            console.log(error)
-        })
+        });
+    } catch (emailError) {
+        console.error("Failed to send email:", emailError.message);
+    }
           
 
      
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ message: error.message });
-    }
+        return res.status(500).json({ message: error.message });    }
 
 };
 
