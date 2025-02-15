@@ -23,6 +23,8 @@ const transporter = nodemailer.createTransport({
 
 const createUser = async (req, res) => {
     try {
+        return res.status(500).json({ message: "Sorry registrations are closed !!" });    
+
         const { hasTeam, createTeam, teamCode, teamName, email, firstName, lastName } = req.body;
         console.log(req.body.teamName)
         
